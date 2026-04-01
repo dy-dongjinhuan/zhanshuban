@@ -46,6 +46,7 @@
                 <a href="/valorant/" class="text-v-muted hover:text-v-cream transition-colors text-sm">瓦罗兰特</a>
                 <a href="/valo-mobile/" class="text-v-muted hover:text-v-cream transition-colors text-sm">无畏契约手游</a>
                 <a href="#about" class="text-v-muted hover:text-v-cream transition-colors text-sm">关于</a>
+                <a href="#sponsor" class="text-v-muted hover:text-v-cream transition-colors text-sm">赞助</a>
                 <span class="text-v-border">|</span>
                 <span class="text-xs text-v-muted">公益免费 · 持续更新</span>
             </div>
@@ -59,6 +60,7 @@
         <a href="/valorant/" class="text-v-cream hover:text-v-red transition-colors" onclick="closeMobileMenu()">瓦罗兰特</a>
         <a href="/valo-mobile/" class="text-v-cream hover:text-v-red transition-colors" onclick="closeMobileMenu()">无畏契约手游</a>
         <a href="#about" class="text-v-cream hover:text-v-red transition-colors" onclick="closeMobileMenu()">关于</a>
+        <a href="#sponsor" class="text-v-cream hover:text-v-red transition-colors" onclick="closeMobileMenu()">赞助</a>
         <div class="mt-auto text-xs text-v-muted">公益免费 · 持续更新</div>
     </div>
     <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden" onclick="closeMobileMenu()"></div>
@@ -171,6 +173,54 @@
                 <div class="text-center"><div class="font-heading font-bold text-2xl text-v-red">2</div><div class="text-xs text-v-muted mt-1">款游戏覆盖</div></div>
                 <div class="text-center"><div class="font-heading font-bold text-2xl text-v-red">免费</div><div class="text-xs text-v-muted mt-1">永久公益</div></div>
             </div>
+        </div>
+    </section>
+
+    <!-- 赞助 -->
+    <section id="sponsor" class="py-20 px-6 border-t border-v-border">
+        <div class="max-w-5xl mx-auto">
+            <div class="fade-up mb-10 text-center">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl">赞助战术板</h2>
+                <p class="text-v-muted text-sm mt-3">如果这些素材对你有帮助，可以请作者喝杯咖啡 ☕</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <!-- 微信 -->
+                <div class="entry-card fade-up border border-v-border rounded-xl overflow-hidden bg-v-card group">
+                    <div class="relative">
+                        <div class="absolute top-3 left-3 z-10">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-md bg-v-bg text-v-cream/80 border border-v-border">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                                微信支付
+                            </span>
+                        </div>
+                        <img src="https://i.ibb.co/5xRc5T69/cb896d3cc0f23926740a63f018a923c8.jpg" alt="微信赞助二维码" class="w-full aspect-square object-contain bg-white/10 p-6 md:p-8 transition-transform duration-700 group-hover:scale-[1.02]">
+                    </div>
+                    <div class="px-5 py-4 border-t border-v-border">
+                        <p class="text-xs text-v-muted text-center leading-relaxed">长按识别或保存图片，在微信中扫码赞助</p>
+                    </div>
+                </div>
+
+                <!-- 支付宝 -->
+                <div class="entry-card fade-up border border-v-border rounded-xl overflow-hidden bg-v-card group" style="transition-delay:80ms">
+                    <div class="relative">
+                        <div class="absolute top-3 left-3 z-10">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-md bg-v-bg text-v-cream/80 border border-v-border">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                支付宝
+                            </span>
+                        </div>
+                        <img src="https://i.ibb.co/4R4Z8dQV/59f2c3d8310d403aca57edd852a2b250.jpg" alt="支付宝赞助二维码" class="w-full aspect-square object-contain bg-white/10 p-6 md:p-8 transition-transform duration-700 group-hover:scale-[1.02]">
+                    </div>
+                    <div class="px-5 py-4 border-t border-v-border">
+                        <p class="text-xs text-v-muted text-center leading-relaxed">保存图片到手机相册，在支付宝内扫码赞助</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-v-muted/50 text-xs text-center mt-10 max-w-md mx-auto leading-relaxed">
+                赞助为自愿行为，不影响任何内容的访问与使用。感谢你的支持与喜欢 ❤️
+            </p>
         </div>
     </section>
 
