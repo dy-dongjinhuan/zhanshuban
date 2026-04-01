@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无畏契约手游攻略 | 战术板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'v': { 'bg':'#0F1923','card':'#1A2634','hover':'#212F3E','border':'#2A3F52','red':'#FF4655','cream':'#ECE8E1','muted':'#768079','teal':'#17DEA6' }
+                    },
+                    fontFamily: { 'heading':['Rajdhani','Noto Sans SC','sans-serif'], 'body':['Noto Sans SC','sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0F1923}::-webkit-scrollbar-thumb{background:#2A3F52;border-radius:3px}::-webkit-scrollbar-thumb:hover{background:#FF4655}
+        .guide-card{transition:transform .3s,box-shadow .3s,border-color .3s}.guide-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(23,222,166,.1);border-color:#17DEA6}
+        .filter-btn{transition:all .2s}.filter-btn.active{background:#17DEA6;color:#0F1923;border-color:#17DEA6}
+        .fade-up{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}.fade-up.visible{opacity:1;transform:translateY(0)}
+        .nav-blur{backdrop-filter:blur(16px);background:rgba(15,25,35,.85);border-bottom:1px solid #2A3F52}
+    </style>
+</head>
+<body class="bg-v-bg text-v-cream font-body">
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-v-red flex items-center justify-center" style="clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)"><i data-lucide="crosshair" class="w-4 h-4 text-white"></i></div>
+                <span class="font-heading font-bold text-xl tracking-wide">战术板</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="/valorant/" class="text-v-muted hover:text-v-cream transition-colors text-sm">瓦罗兰特</a>
+                <a href="/valo-mobile/" class="text-v-teal text-sm font-medium">无畏契约手游</a>
+                <a href="/#about" class="text-v-muted hover:text-v-cream transition-colors text-sm">关于</a>
+            </div>
+            <button id="menuBtn" class="md:hidden text-v-muted hover:text-v-cream"><i data-lucide="menu" class="w-6 h-6"></i></button>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="fixed top-0 right-0 bottom-0 w-64 bg-v-card z-50 p-6 flex flex-col gap-6 md:hidden" style="transform:translateX(100%);transition:transform .3s">
+        <button id="closeMenu" class="self-end text-v-muted hover:text-v-cream"><i data-lucide="x" class="w-6 h-6"></i></button>
+        <a href="/" class="text-v-muted hover:text-v-cream transition-colors" onclick="closeMobileMenu()">首页</a>
+        <a href="/valorant/" class="text-v-cream hover:text-v-red transition-colors" onclick="closeMobileMenu()">瓦罗兰特</a>
+        <a href="/valo-mobile/" class="text-v-teal" onclick="closeMobileMenu()">无畏契约手游</a>
+    </div>
+    <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden" onclick="closeMobileMenu()"></div>
+
+    <section class="pt-28 pb-10 px-6">
+        <div class="max-w-6xl mx-auto">
+            <a href="/" class="inline-flex items-center gap-1.5 text-xs text-v-muted hover:text-v-cream transition-colors mb-6">
+                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> 返回首页
+            </a>
+            <div class="flex items-center gap-3 mb-2">
+                <span class="text-[10px] px-2.5 py-1 rounded bg-teal-500/20 text-teal-400 font-medium tracking-wide">移动端</span>
+            </div>
+            <h1 class="font-heading font-bold text-3xl md:text-5xl tracking-tight">无畏契约手游 攻略素材</h1>
+            <p class="text-v-muted text-sm mt-3 max-w-lg">灵敏度设置、操作布局推荐、瞄准技巧、地图差异对比</p>
+        </div>
+    </section>
+
+    <section class="px-6 pb-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap gap-2" id="filterBar">
+                <button class="filter-btn active border border-v-border px-4 py-1.5 rounded text-xs text-v-muted font-medium" data-filter="all">全部</button>
+                <button class="filter-btn border border-v-border px-4 py-1.5 rounded text-xs text-v-muted font-medium" data-filter="basic">基础设置</button>
+                <button class="filter-btn border border-v-border px-4 py-1.5 rounded text-xs text-v-muted font-medium" data-filter="map">地图差异</button>
+                <button class="filter-btn border border-v-border px-4 py-1.5 rounded text-xs text-v-muted font-medium" data-filter="skill">操作技巧</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 pb-20">
+        <div class="max-w-6xl mx-auto">
+            <div id="guideGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+            <div id="noResult" class="hidden text-center py-20">
+                <i data-lucide="search-x" class="w-12 h-12 text-v-border mx-auto mb-4"></i>
+                <p class="text-v-muted">该分类暂无素材</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-v-border py-8 px-6">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2">
+                <div class="w-5 h-5 bg-v-red flex items-center justify-center" style="clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)"><i data-lucide="crosshair" class="w-2.5 h-2.5 text-white"></i></div>
+                <span class="font-heading font-bold text-xs">战术板</span>
+            </a>
+            <p class="text-xs text-v-muted/50">© 2025 战术板</p>
+        </div>
+    </footer>
+
+    <script>
+        const guides = [
+            { title:'三套灵敏度方案对比', desc:'低/中/高灵敏度详细参数设置对比，附适用场景说明', tag:'basic', img:'https://picsum.photos/seed/vm-sens1/600/400', href:'/valo-mobile/sensitivity.html' },
+            { title:'双指操作布局推荐', desc:'适用于小屏设备，含按键大小、间距标注与拖拽区域示意', tag:'basic', img:'https://picsum.photos/seed/vm-layout1/600/400', href:'/valo-mobile/layout-2finger.html' },
+            { title:'三指操作布局推荐', desc:'兼顾移动与射击的中间方案，含开镜与技能快捷键配置', tag:'basic', img:'https://picsum.photos/seed/vm-layout2/600/400', href:'/valo-mobile/layout-3finger.html' },
+            { title:'四指操作布局推荐', desc:'竞技向高阶方案，含走位/射击/技能/跳跃全分离布局', tag:'basic', img:'https://picsum.photos/seed/vm-layout3/600/400', href:'/valo-mobile/layout-4finger.html' },
+            { title:'PC端 vs 手游 地图结构差异', desc:'源工重镇、莲花等地图在移动端的掩体与通道调整标注', tag:'map', img:'https://picsum.photos/seed/vm-mapdiff1/600/400', href:'/valo-mobile/map-diff.html' },
+        ];
+
+        const tagLabels = { basic:'基础设置', map:'地图差异', skill:'操作技巧' };
+        const tagColors = { basic:'bg-gray-500/20 text-gray-400', map:'bg-blue-500/20 text-blue-400', skill:'bg-teal-500/20 text-teal-400' };
+
+        function renderCards(filter='all') {
+            const grid = document.getElementById('guideGrid');
+            const noResult = document.getElementById('noResult');
+            const filtered = filter === 'all' ? guides : guides.filter(g => g.tag === filter);
+            if (!filtered.length) { grid.innerHTML = ''; noResult.classList.remove('hidden'); return; }
+            noResult.classList.add('hidden');
+            grid.innerHTML = filtered.map((g,i) => `
+                <a href="${g.href}" class="guide-card block border border-v-border rounded-lg overflow-hidden bg-v-card fade-up" style="transition-delay:${i*60}ms">
+                    <div class="relative aspect-[3/2] overflow-hidden">
+                        <img src="${g.img}" alt="${g.title}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-v-card/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3"><span class="text-[10px] px-2 py-0.5 rounded ${tagColors[g.tag]} font-medium">${tagLabels[g.tag]}</span></div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium text-sm leading-snug mb-2">${g.title}</h3>
+                        <p class="text-xs text-v-muted leading-relaxed line-clamp-2">${g.desc}</p>
+                    </div>
+                </a>
+            `).join('');
+            lucide.createIcons();
+            requestAnimationFrame(() => grid.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible')));
+        }
+
+        document.getElementById('filterBar').addEventListener('click', e => {
+            if (!e.target.classList.contains('filter-btn')) return;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            renderCards(e.target.dataset.filter);
+        });
+
+        document.getElementById('menuBtn').addEventListener('click',()=>{document.getElementById('mobileMenu').style.transform='translateX(0)';document.getElementById('menuOverlay').classList.remove('hidden');document.body.style.overflow='hidden'});
+        function closeMobileMenu(){document.getElementById('mobileMenu').style.transform='translateX(100%)';document.getElementById('menuOverlay').classList.add('hidden');document.body.style.overflow=''}
+        document.getElementById('closeMenu').addEventListener('click',closeMobileMenu);
+
+        renderCards();
+        lucide.createIcons();
+    </script>
+</body>
+</html>

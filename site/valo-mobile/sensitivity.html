@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三套灵敏度方案对比 | 战术板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'v': { 'bg':'#0F1923','card':'#1A2634','hover':'#212F3E','border':'#2A3F52','red':'#FF4655','cream':'#ECE8E1','muted':'#768079','teal':'#17DEA6' }
+                    },
+                    fontFamily: { 'heading':['Rajdhani','Noto Sans SC','sans-serif'], 'body':['Noto Sans SC','sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0F1923}::-webkit-scrollbar-thumb{background:#2A3F52;border-radius:3px}::-webkit-scrollbar-thumb:hover{background:#FF4655}
+        .nav-blur{backdrop-filter:blur(16px);background:rgba(15,25,35,.85);border-bottom:1px solid #2A3F52}
+        .article-img{border:1px solid #2A3F52;border-radius:8px;overflow:hidden}
+        .article-img img{width:100%;display:block}
+        .tip-box{border-left:3px solid #FF4655;background:rgba(255,70,85,.06);padding:16px 20px;border-radius:0 8px 8px 0}
+        .info-box{border-left:3px solid #17DEA6;background:rgba(23,222,166,.06);padding:16px 20px;border-radius:0 8px 8px 0}
+        .data-table{width:100%;border-collapse:collapse;font-size:13px}
+        .data-table th{text-align:left;padding:10px 14px;background:#1A2634;color:#768079;font-weight:500;border-bottom:1px solid #2A3F52}
+        .data-table td{padding:10px 14px;border-bottom:1px solid #1A2634;color:#ECE8E1}
+        .data-table tr:hover td{background:#1A2634}
+        .toc-link{display:block;padding:6px 0 6px 16px;border-left:2px solid #2A3F52;color:#768079;font-size:13px;transition:all .2s}
+        .toc-link:hover,.toc-link.active{border-left-color:#FF4655;color:#ECE8E1}
+    </style>
+</head>
+<body class="bg-v-bg text-v-cream font-body">
+
+    <!-- 导航 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-v-red flex items-center justify-center" style="clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)"><i data-lucide="crosshair" class="w-4 h-4 text-white"></i></div>
+                <span class="font-heading font-bold text-xl tracking-wide">战术板</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="/valorant/" class="text-v-muted hover:text-v-cream transition-colors text-sm">瓦罗兰特</a>
+                <a href="/valo-mobile/" class="text-v-teal text-sm font-medium">无畏契约手游</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 面包屑 -->
+    <div class="pt-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-2 text-xs text-v-muted mb-8">
+                <a href="/" class="hover:text-v-cream transition-colors">首页</a>
+                <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                <a href="/valo-mobile/" class="hover:text-v-cream transition-colors">无畏契约手游</a>
+                <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                <span class="text-v-cream">三套灵敏度方案对比</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文章主体 -->
+    <article class="px-6 pb-20">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- 标题区 -->
+            <header class="mb-12">
+                <span class="text-[10px] px-2.5 py-1 rounded bg-teal-500/20 text-teal-400 font-medium tracking-wide">基础设置</span>
+                <h1 class="font-heading font-bold text-3xl md:text-5xl tracking-tight mt-4 mb-4">三套灵敏度方案对比</h1>
+                <p class="text-v-muted text-sm leading-relaxed max-w-2xl">针对不同手感和游戏习惯，提供低/中/高三套灵敏度参数方案，附带每套方案的适用场景与优缺点分析。</p>
+            </header>
+
+            <!-- ============================== -->
+            <!--    下面就是正文内容区域          -->
+            <!--    你可以自由增删改段落          -->
+            <!--    复制这个文件改内容就能新建页面  -->
+            <!-- ============================== -->
+
+            <!-- 纯文字段落 -->
+            <p class="text-sm text-v-muted leading-relaxed mb-6">
+                手游的灵敏度设置直接决定了你的瞄准手感。灵敏度太高，准星容易飘，远距离跟枪困难；灵敏度太低，转身慢，近战容易被绕。经过反复测试，我整理了三套不同风格的方案，分别适合不同的玩家类型。
+            </p>
+
+            <!-- 提示框（红色，注意事项） -->
+            <div class="tip-box mb-8">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 text-v-red mt-0.5 shrink-0"></i>
+                    <p class="text-xs text-v-muted leading-relaxed">以下参数基于 iPhone 15 Pro 测试，不同机型屏幕尺寸和触控采样率可能有差异，建议以此为基准微调。</p>
+                </div>
+            </div>
+
+            <!-- 大图（占满宽度） -->
+            <div class="article-img mb-8">
+                <img src="https://picsum.photos/seed/sens-overview/900/500" alt="灵敏度总览">
+            </div>
+
+            <!-- 二级标题 -->
+            <h2 class="font-heading font-bold text-xl md:text-2xl mb-4 pb-2 border-b border-v-border">方案一：低灵敏度（精准型）</h2>
+
+            <p class="text-sm text-v-muted leading-relaxed mb-6">
+                适合有FPS基础的玩家，尤其是从PC端转过来的。低灵敏度让你在远距离对枪时有更精细的控制，跟枪更稳，但需要更大的手指滑动距离来完成转身。
+            </p>
+
+            <!-- 数据表格 -->
+            <div class="overflow-x-auto mb-8 rounded-lg border border-v-border">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>参数项</th>
+                            <th>数值</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>开镜灵敏度</td><td><span class="text-v-red font-medium">0.4</span></td><td>低开镜，远距离精准跟枪</td></tr>
+                        <tr><td>不开镜灵敏度</td><td><span class="text-v-red font-medium">0.6</span></td><td>略高于开镜，保证转身速度</td></tr>
+                        <tr><td>开镜转身速度</td><td><span class="text-v-red font-medium">1.0</span></td><td>默认值即可</td></tr>
+                        <tr><td>陀螺仪灵敏度</td><td><span class="text-v-red font-medium">30</span></td><td>辅助微调，不作为主要转向方式</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 提示框（绿色，小技巧） -->
+            <div class="info-box mb-8">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="lightbulb" class="w-4 h-4 text-v-teal mt-0.5 shrink-0"></i>
+                    <p class="text-xs text-v-muted leading-relaxed">如果觉得转身太慢，可以只调高"不开镜灵敏度"到 0.7，保持开镜灵敏度不变，这样瞄准精度不受影响。</p>
+                </div>
+            </div>
+
+            <!-- 图文左右排列（桌面端左图右文，移动端上图下文） -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 items-center">
+                <div class="article-img">
+                    <img src="https://picsum.photos/seed/sens-low-demo/500/350" alt="低灵敏度演示">
+                </div>
+                <div>
+                    <h3 class="font-medium text-sm mb-2">低灵敏度适合的场景</h3>
+                    <ul class="text-xs text-v-muted leading-relaxed space-y-2">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-3 h-3 text-v-teal mt-0.5 shrink-0"></i>远距离对枪（如 Haven 长廊）</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-3 h-3 text-v-teal mt-0.5 shrink-0"></i>步枪/狙击枪为主</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-3 h-3 text-v-teal mt-0.5 shrink-0"></i>有陀螺仪辅助转向</li>
+                        <li class="flex items-start gap-2"><i data-lucide="x" class="w-3 h-3 text-v-red mt-0.5 shrink-0"></i>近战喷子rush不太友好</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 分隔线 -->
+            <hr class="border-v-border my-10">
+
+            <!-- 第二个方案 -->
+            <h2 class="font-heading font-bold text-xl md:text-2xl mb-4 pb-2 border-b border-v-border">方案二：中灵敏度（均衡型）</h2>
+
+            <p class="text-sm text-v-muted leading-relaxed mb-6">
+                最推荐的万金油方案。兼顾了远距离精准和近战灵活性，不需要大幅滑动手指也能完成转身。适合大多数玩家，尤其是刚开始接触手游FPS的人。
+            </p>
+
+            <div class="overflow-x-auto mb-8 rounded-lg border border-v-border">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>参数项</th><th>数值</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>开镜灵敏度</td><td><span class="text-v-red font-medium">0.6</span></td><td>中等开镜，兼顾跟枪和甩枪</td></tr>
+                        <tr><td>不开镜灵敏度</td><td><span class="text-v-red font-medium">0.8</span></td><td>转身流畅</td></tr>
+                        <tr><td>开镜转身速度</td><td><span class="text-v-red font-medium">1.2</span></td><td>略快于默认</td></tr>
+                        <tr><td>陀螺仪灵敏度</td><td><span class="text-v-red font-medium">50</span></td><td>可当作辅助转向</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 图文左右排列（这次反过来的顺序） -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 items-center">
+                <div class="md:order-2 article-img">
+                    <img src="https://picsum.photos/seed/sens-mid-demo/500/350" alt="中灵敏度演示">
+                </div>
+                <div class="md:order-1">
+                    <h3 class="font-medium text-sm mb-2">中灵敏度适合的场景</h3>
+                    <ul class="text-xs text-v-muted leading-relaxed space-y-2">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-3 h-3 text-v-teal mt-0.5 shrink-0"></i>中近距离对枪</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-3 h-3 text-v-teal mt-0.5 shrink-0"></i>步枪/冲锋枪切换使用</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-3 h-3 text-v-teal mt-0.5 shrink-0"></i>不依赖陀螺仪也能玩</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-3 h-3 text-v-teal mt-0.5 shrink-0"></i>新手入门首选</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-v-border my-10">
+
+            <!-- 第三个方案 -->
+            <h2 class="font-heading font-bold text-xl md:text-2xl mb-4 pb-2 border-b border-v-border">方案三：高灵敏度（激进型）</h2>
+
+            <p class="text-sm text-v-muted leading-relaxed mb-6">
+                适合喜欢近战突击、喷子rush的玩家。转身极快，可以用很小的手指滑动完成180度转身。但远距离跟枪难度大，需要大量练习才能控制住准星。
+            </p>
+
+            <div class="overflow-x-auto mb-8 rounded-lg border border-v-border">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>参数项</th><th>数值</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>开镜灵敏度</td><td><span class="text-v-red font-medium">0.8</span></td><td>偏高，需要手感适应</td></tr>
+                        <tr><td>不开镜灵敏度</td><td><span class="text-v-red font-medium">1.2</span></td><td>快速转身</td></tr>
+                        <tr><td>开镜转身速度</td><td><span class="text-v-red font-medium">1.5</span></td><td>最快</td></tr>
+                        <tr><td>陀螺仪灵敏度</td><td><span class="text-v-red font-medium">70</span></td><td>大幅辅助转向</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tip-box mb-8">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="alert-triangle" class="w-4 h-4 text-v-red mt-0.5 shrink-0"></i>
+                    <p class="text-xs text-v-muted leading-relaxed">高灵敏度方案<strong class="text-v-cream">不推荐新手使用</strong>。建议先用中灵敏度玩至少一周，觉得转身确实不够快再考虑上调。</p>
+                </div>
+            </div>
+
+            <!-- 大图 -->
+            <div class="article-img mb-8">
+                <img src="https://picsum.photos/seed/sens-high-demo/900/500" alt="高灵敏度演示">
+            </div>
+
+            <hr class="border-v-border my-10">
+
+            <!-- 三方案总结对比 -->
+            <h2 class="font-heading font-bold text-xl md:text-2xl mb-4 pb-2 border-b border-v-border">三方案总结对比</h2>
+
+            <div class="overflow-x-auto mb-8 rounded-lg border border-v-border">
+                <table class="data-table">
+                    <thead>
+                        <tr><th></th><th>低灵敏度</th><th>中灵敏度</th><th>高灵敏度</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="text-v-muted">远距跟枪</td><td><span class="text-v-teal">★★★★★</span></td><td><span class="text-v-teal">★★★★</span></td><td><span class="text-v-red">★★</span></td></tr>
+                        <tr><td class="text-v-muted">转身速度</td><td><span class="text-v-red">★★</span></td><td><span class="text-v-teal">★★★★</span></td><td><span class="text-v-teal">★★★★★</span></td></tr>
+                        <tr><td class="text-v-muted">上手难度</td><td><span class="text-v-red">难</span></td><td><span class="text-v-teal">易</span></td><td><span class="text-v-red">难</span></td></tr>
+                        <tr><td class="text-v-muted">适合武器</td><td>步枪/狙击</td><td>全武器</td><td>喷子/冲锋枪</td></tr>
+                        <tr><td class="text-v-muted">推荐人群</td><td>PC转手游</td><td>大多数玩家</td><td>近战型玩家</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box mb-8">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="lightbulb" class="w-4 h-4 text-v-teal mt-0.5 shrink-0"></i>
+                    <p class="text-xs text-v-muted leading-relaxed">建议先选一套方案完整使用 3-5 天，不要频繁切换。肌肉记忆需要时间建立，频繁改参数反而会越打越乱。</p>
+                </div>
+            </div>
+
+            <!-- ============================== -->
+            <!--    正文内容结束                  -->
+            <!-- ============================== -->
+
+            <!-- 底部导航 -->
+            <div class="border-t border-v-border pt-8 mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <a href="/valo-mobile/" class="inline-flex items-center gap-2 text-xs text-v-muted hover:text-v-cream transition-colors">
+                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> 返回攻略列表
+                </a>
+                <a href="/valo-mobile/layout-2finger.html" class="inline-flex items-center gap-2 text-xs text-v-muted hover:text-v-cream transition-colors">
+                    下一篇：双指操作布局推荐 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="border-t border-v-border py-8 px-6">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2">
+                <div class="w-5 h-5 bg-v-red flex items-center justify-center" style="clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)"><i data-lucide="crosshair" class="w-2.5 h-2.5 text-white"></i></div>
+                <span class="font-heading font-bold text-xs">战术板</span>
+            </a>
+            <p class="text-xs text-v-muted/50">© 2025 战术板</p>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
